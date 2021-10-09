@@ -13,11 +13,19 @@ app.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).send({
             message: err.message
-        }) 
+        })
     }
 });
-
-app.get('/affirmation', async (req, res) => {
+app.get('/api', async (req, res) => {
+    try {
+        res.status(200).send(data)
+    } catch (err) {
+        res.status(500).send({
+            message: err.message
+        })
+    }
+});
+app.get('/api/random-affirmation', async (req, res) => {
     try {
         res.status(200).send(
             data[Math.round(Math.random() * data.length)]
@@ -32,5 +40,5 @@ app.get('/affirmation', async (req, res) => {
 
 app.listen(
     PORT,
-    () => console.log(`Server running at port http://localhost:${PORT}/affirmation`)
+    () => console.log(`Server running at port ${PORT}`)
 )
