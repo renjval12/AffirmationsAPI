@@ -10,7 +10,6 @@ const PORT = process.env.PORT || 3000
 app.get('/', async (req, res) => {
     try {
         res.sendFile(path.join(__dirname, '/index.html'));
-        res.sendFile(path.join(__dirname, '/style.css'));
 
     } catch (err) {
         res.status(500).send({
