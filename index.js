@@ -1,5 +1,5 @@
 const path = require('path');
-const data = require('./affirmations.json')
+const data = require('./api/affirmations.json')
 
 const express = require('express')
 const app = express()
