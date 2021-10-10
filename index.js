@@ -19,7 +19,7 @@ app.get('/', async (req, res) => {
 });
 app.get('/api', async (req, res) => {
     try {
-        res.status(200).send(data)
+        res.status(200).json(data)
     } catch (err) {
         res.status(500).send({
             message: err.message
@@ -28,7 +28,7 @@ app.get('/api', async (req, res) => {
 });
 app.get('/api/random-affirmation', async (req, res) => {
     try {
-        res.status(200).send(
+        res.status(200).json(
             data[Math.round(Math.random() * data.length)]
         )
     } catch (err) {
@@ -40,7 +40,7 @@ app.get('/api/random-affirmation', async (req, res) => {
 })
 app.get('/api/random-affirmation', async (req, res) => {
     try {
-        res.status(200).send(
+        res.status(200).json(
             data[Math.round(Math.random() * data.length)]
         )
     } catch (err) {
